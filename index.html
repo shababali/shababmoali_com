@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <style>
+    body {
+      font-family: monospace;
+    }
+    .container-content {
+      /* The display: flex property on the container will place the 'skills' section to the left of the 'work-experience' section.
+      The flex: 1 property on both the 'skills' and 'work-experience' classes will ensure that both sections have the same height */
+      display: flex;
+    }
+    .skills, .work-experience {
+      flex: 1;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+    .skills {
+      /* modify the width of the 'skills' section using the flex-basis property */
+      flex-basis: 24%;
+      margin-bottom: 10px;
+    }
+    .skills h2 {
+      margin-bottom: 16px;
+    }
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+    .skills li {
+      margin-bottom: 4px;
+    }
+    .work-experience {
+      flex-basis: 76%;
+    }
+    .work-experience h2 {
+      margin-bottom: 16px;
+    }
+    .work-experience h3 {
+      font-family: Courier, monospace;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-content">
+    <section class="skills">
+      <h2>Skills</h2>
+      <h4>Backend Programming (Linux)</h4>
+      <ul>
+        <li>Python</li>
+        <li>Java 8</li>
+        <li>Bash</li>
+        <li>PostgresDB</li>
+        <li>PostreSQL</li>
+      </ul>
+      <h4>Project management</h4>
+      <ul>
+        <li>Slack</li>
+        <li>Lucidchart</li>
+        <li>Atlassian Jira/Confluence</li>
+        <li>GitHub</li>
+        <li>Google Workspace</li>
+      </ul>
+    </section>
+    <section class="work-experience">
+      <h2>Work Experience</h2>
+      <h3>Semaphore Solutions - Software Developer</h3>
+      <p>
+        Developed software integrations for genomics laboratory Helix, implementing Semaphore's Laboratory Information Management System (LIMS) product named labbit.
+        Developed a Python software development kit to integrate labbit APIs (marshmallow, requests, pyjwt, csv).
+        Designed workflows with a focus on requeue scenarios.
+        Tested labbit performance, API contracts, and reported bugs.
+      </p>
+      <h3>Semaphore Solutions - Solutions Engineer/Quality Manager</h3>
+      <p>
+        Developed software integrations for several large US healthcare and genomics companies, implementing Illumina's Clarity LIMS.
+        Developed Python data processing scripts or standalone software integrations (Python/Flask).
+        Designed laboratory sample processing workflows (published).
+        Wrote test code to support behavior-driven or test-driven development (unittest, pytest).
+      </p>
+      <p>Victoria, BC 2018</p>
+      <h3>Infinite Forestry - Data Manager/Environmental Consultant</h3>
+      <p>
+        Supported project management of field work and data relating to forestry services.
+        Created a database and reporting scripts (MS SQL server/Python).
+        Mapped field work by importing spreadsheet reports to Google Earth.
+      </p>
+      <p>Grande Prairie, AB 2017</p>
+    </section>
+  </div>
+</body>
+</html>
