@@ -21,7 +21,9 @@
     .skills {
       /* modify the width of the 'skills' section using the flex-basis property */
       flex-basis: 24%;
-      margin-bottom: 10px;
+    }
+    .se {
+      padding: 1px 1px 0px 0px;
     }
     .skills h2 {
       margin-bottom: 16px;
@@ -36,11 +38,13 @@
     .work-experience {
       flex-basis: 76%;
     }
+    .we {
+      padding: 1px 1px 0px 0px;
+    }
     .work-experience h2 {
       margin-bottom: 16px;
     }
     .work-experience h3 {
-      font-family: Courier, monospace;
       margin-bottom: 10px;
     }
   </style>
@@ -48,62 +52,78 @@
 <body>
   <div class="container-content">
     <section class="skills">
-      <h2>Skills</h2>
-      <h4>Frontend Programming</h4>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript-lite</li>
-      </ul>
-      <h4>Backend Programming (Linux)</h4>
-      <ul>
-        <li>Python</li>
-        <li>Java 8</li>
-        <li>Bash</li>
-        <li>PostgresDB</li>
-        <li>PostreSQL</li>
-      </ul>
-      <h4>Project management</h4>
-      <ul>
-        <li>Slack</li>
-        <li>Lucidchart</li>
-        <li>Atlassian Jira/Confluence</li>
-        <li>GitHub</li>
-        <li>Google Workspace</li>
-      </ul>
+      <h1>Skills</h1>
+      <section class="se">
+        <h4>Frontend Programming</h4>
+        <ul>
+          <li><em>HTML</em></li>
+          <li><em>CSS</em></li>
+          <li><em>Javascript-lite</em></li>
+        </ul>
+      </section>
+      <section class="se">
+        <h4>Backend Programming (Linux)</h4>
+        <ul>
+          <li><em>Python</em></li>
+          <li><em>Java 8</em></li>
+          <li><em>Bash</em></li>
+          <li><em>PostgresDB</em></li>
+          <li><em>PostreSQL</em></li>
+          <li><em>Docker</em></li>
+        </ul>
+      </section>
+      <section class="se">
+        <h4>Project management</h4>
+        <ul>
+          <li><em>Slack</em></li>
+          <li><em>Lucidchart</em></li>
+          <li><em>Atlassian Jira/Confluence</em></li>
+          <li><em>GitHub</em></li>
+          <li><em>Google Workspace</em></li>
+        </ul>
+      </section>
     </section>
     <section class="work-experience">
-      <h2>Work Experience</h2>
-      <h3>Software Developer</h3>
-      <h4>Semaphore Solutions  2021 - current</h4>
-      <p>
-        Developed software integrations for genomics laboratory Helix, via cross-functional team, implementing Semaphore's novel Laboratory Information Management System (LIMS) product (named labbit).
-        <ul>
-          <li>Designed workflows with a focus on requeue scenarios.</li>
-          <li>Developed a Python software development kit to integrate labbit APIs (<em>marshmallow</em>, <em>requests</em>, <em>pyjwt</em>, <em>csv</em>).</li>
-          <li>Tested labbit performance (<em>Python</em>, <em>Bash</em>), API contracts (<em>OpenAPI</em>)</li>
-          <li>Troubleshoot bugs and triaged with product and operations team (<em>Datadog</em>).</li>
-        </ul>
-        Result - Successful first implementation of labbit, proof of principle for migrating complex lab workflow management from one LIMS to another
-      </p>
-      <h3>Software Developer/Solutions Engineer</h3>
-      <h4>Semaphore Solutions  2018 - 2021</h4>
-      <p>
-        Developed software integrations for several large US healthcare and genomics companies, implementing Illumina's Clarity LIMS.
-        <ul>
-          <li>Designed workflows to support a variety of clincial pathology laborotory techniques.</li>
-          <li>Developed Python data processing scripts or standalone software integrations (Python/Flask).</li>
-          <li>Wrote test code to support behavior-driven or test-driven development (unittest, pytest).</li>
-        </ul>
-        Result - Increased software development velocity and enabled healthcare centres (e.g. Cleveland Clinic) to build and deploy production software within budget
-      </p>
-      <h3>Environmental Consultant/Data Manager</h3>
-      <h4>Infinite Forestry  2017-2018</h4>
-      <p>
-        Supported project management of field work and data relating to forestry services.
-        Created a database and reporting scripts (MS SQL server/Python).
-        Mapped field work by importing spreadsheet reports to Google Earth.
-      </p>
+      <h1>Work Experience</h1>
+      <section class="we">
+        <h3>Software Developer</h3>
+        <h4>Semaphore Solutions  2021 -> current</h4>
+        <p>
+          Developed software integrations for genomics laboratory Helix, via cross-functional team, implementing Semaphore's novel Laboratory Information Management System (LIMS) product (named labbit).
+          <ul>
+            <li>Designed workflows with a focus on requeue scenarios</li>
+            <li>Developed a Python software development kit to integrate labbit APIs (<em>marshmallow</em>, <em>requests</em>, <em>pyjwt</em>, <em>csv</em>)</li>
+            <li>Tested labbit performance (<em>Python</em>, <em>Bash</em>), API contracts (<em>OpenAPI</em>)</li>
+            <li>Troubleshoot bugs and triaged with product and operations team (<em>Datadog</em>)</li>
+          </ul>
+          Result - Successful first implementation of labbit, proof of principle for migrating regulated lab workflow management logic from one LIMS to another.
+        </p>
+      </section>
+      <section class="we">
+        <h3>Software Developer/Solutions Engineer</h3>
+        <h4>Semaphore Solutions  2018 -> 2021</h4>
+        <p>
+          Developed software integrations for several large US healthcare and genomics companies, implementing Illumina's Clarity LIMS.
+          <ul>
+            <li>Designed workflows to support a variety of clincial pathology laborotory techniques</li>
+            <li>Developed Python data processing scripts or standalone software integrations (<em>Python</em>/<em>Flask</em>)</li>
+            <li>Wrote test code to support behavior-driven or test-driven development (<em>unittest</em>, <em>pytest</em>)</li>
+          </ul>
+          Result - Increased software development velocity and enabled healthcare centres and biotech companies (e.g. Cleveland Clinic, and Illumina) to build and deploy production software within budget.
+        </p>
+      </section>
+      <section class="we">
+        <h3>Environmental Consultant/Data Manager</h3>
+        <h4>Infinite Forestry  2017 -> 2018</h4>
+        <p>
+          Supported project management of field work and data relating to forestry services.
+          <ul>
+            <li>Created a local database and reporting scripts (<em>MS SQL server</em>/<em>Python</em>)</li>
+            <li>Mapped field work by importing spreadsheet reports to Google Earth</li>
+          </ul>
+          Result - Reduced planning time and improved integrity of mapping data in the field.
+        </p>
+      </section>
     </section>
   </div>
 </body>
