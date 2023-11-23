@@ -1,130 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume</title>
-  <style>
-    body {
-      font-family: monospace;
-    }
-    .container-content {
-      /* The display: flex property on the container will place the 'skills' section to the left of the 'work-experience' section.
-      The flex: 1 property on both the 'skills' and 'work-experience' classes will ensure that both sections have the same height */
-      display: flex;
-    }
-    .skills, .work-experience {
-      flex: 1;
-      padding: 16px;
-      box-sizing: border-box;
-    }
-    .skills {
-      /* modify the width of the 'skills' section using the flex-basis property */
-      flex-basis: 24%;
-    }
-    .se {
-      padding: 1px 1px 0px 0px;
-    }
-    .skills h2 {
-      margin-bottom: 16px;
-    }
-    .skills ul {
-      list-style: none;
-      padding: 0;
-    }
-    .skills li {
-      margin-bottom: 4px;
-    }
-    .work-experience {
-      flex-basis: 76%;
-    }
-    .we {
-      padding: 1px 1px 0px 0px;
-    }
-    .work-experience h2 {
-      margin-bottom: 16px;
-    }
-    .work-experience h3 {
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container-content">
-    <section class="skills">
-      <h1>Skills</h1>
-      <section class="se">
-        <h4>Frontend Programming</h4>
-        <ul>
-          <li><em>HTML</em></li>
-          <li><em>CSS</em></li>
-          <li><em>Javascript-lite</em></li>
-        </ul>
-      </section>
-      <section class="se">
-        <h4>Backend Programming (Linux)</h4>
-        <ul>
-          <li><em>Python</em></li>
-          <li><em>Java 8</em></li>
-          <li><em>Bash</em></li>
-          <li><em>PostgresDB</em></li>
-          <li><em>PostreSQL</em></li>
-          <li><em>Docker</em></li>
-        </ul>
-      </section>
-      <section class="se">
-        <h4>Project management</h4>
-        <ul>
-          <li><em>Slack</em></li>
-          <li><em>Lucidchart</em></li>
-          <li><em>Atlassian Jira/Confluence</em></li>
-          <li><em>GitHub</em></li>
-          <li><em>Google Workspace</em></li>
-        </ul>
-      </section>
-    </section>
-    <section class="work-experience">
-      <h1>Work Experience</h1>
-      <section class="we">
-        <h3>Software Developer</h3>
-        <h4>Semaphore Solutions  2021 -> current</h4>
-        <p>
-          Developed software integrations for genomics laboratory Helix, via cross-functional team, implementing Semaphore's novel Laboratory Information Management System (LIMS) product (named labbit).
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shabab Ali</title>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <style>
+
+      /* flip dark vs light mode */
+      body {
+        font-family: 'Istok Web', monospace;
+        background: #f2f2f2; /* easy white */
+        color: #333; /* Default text color */
+        transition: background-color 0.5s, color 0.5s;
+      }
+      .dark-mode {
+        background: #1a1a1a; /* lighter than black */
+        color: #ddd; /* Light text color for dark mode */
+      }
+      #toggleDark {
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 16px; /* Adjust this value to position the icon from the top */
+        right: 16px; /* Adjust this value to position the icon from the right */
+      }
+
+      .container-content {
+        /* The display: flex property on the container will place the 'skills' section to the left of the 'work-experience' section.
+        The flex: 1 property on both the 'skills' and 'work-experience' classes will ensure that both sections have the same height */
+        display: flex;
+      }
+      .skills, .work-experience {
+        flex: 1;
+        padding: 16px;
+        box-sizing: border-box;
+      }
+      .skills {
+        /* modify the width of the 'skills' section using the flex-basis property */
+        flex-basis: 36%;
+      }
+      .se {
+        padding: 1px 1px 0px 0px;
+      }
+      .skills h2 {
+        margin-bottom: 16px;
+      }
+      .skills ul {
+        list-style: none;
+        padding: 0;
+      }
+      .skills li {
+        margin-bottom: 4px;
+      }
+      .work-experience {
+        flex-basis: 64%;
+      }
+      .we {
+        padding: 1px 1px 0px 0px;
+      }
+      .work-experience h2 {
+        margin-bottom: 16px;
+      }
+      .work-experience h3 {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container-landing">
+      <i class="bi bi-brightness-high" id="toggleDark"></i>
+    </div>
+
+    <div class="container-content">
+      <section class="skills">
+        <h1>Skills</h1>
+        <section class="se">
+          <h4>Frontend Programming</h4>
           <ul>
-            <li>Designed workflows with a focus on requeue scenarios</li>
-            <li>Developed a Python software development kit to integrate labbit APIs (<em>marshmallow</em>, <em>requests</em>, <em>pyjwt</em>, <em>csv</em>)</li>
-            <li>Tested labbit performance (<em>Python</em>, <em>Bash</em>), API contracts (<em>OpenAPI</em>)</li>
-            <li>Troubleshoot bugs and triaged with product and operations team (<em>Datadog</em>)</li>
+            <li><em>HTML</em></li>
+            <li><em>CSS</em></li>
+            <li><em>Javascript-lite</em></li>
           </ul>
-          Result - Successful first implementation of labbit, proof of principle for migrating regulated lab workflow management logic from one LIMS to another.
-        </p>
-      </section>
-      <section class="we">
-        <h3>Software Developer/Solutions Engineer</h3>
-        <h4>Semaphore Solutions  2018 -> 2021</h4>
-        <p>
-          Developed software integrations for several large US healthcare and genomics companies, implementing Illumina's Clarity LIMS.
+        </section>
+        <section class="se">
+          <h4>Backend Programming (Linux)</h4>
           <ul>
-            <li>Designed workflows to support a variety of clincial pathology laborotory techniques</li>
-            <li>Developed Python data processing scripts or standalone software integrations (<em>Python</em>/<em>Flask</em>)</li>
-            <li>Wrote test code to support behavior-driven or test-driven development (<em>unittest</em>, <em>pytest</em>)</li>
+            <li><em>Python</em></li>
+            <li><em>Java 8</em></li>
+            <li><em>Bash</em></li>
+            <li><em>PostgresDB</em></li>
+            <li><em>PostreSQL</em></li>
+            <li><em>Docker</em></li>
           </ul>
-          Result - Increased software development velocity and enabled healthcare centres and biotech companies (e.g. Cleveland Clinic, and Illumina) to build and deploy production software within budget.
-        </p>
-      </section>
-      <section class="we">
-        <h3>Environmental Consultant/Data Manager</h3>
-        <h4>Infinite Forestry  2017 -> 2018</h4>
-        <p>
-          Supported project management of field work and data relating to forestry services.
+        </section>
+        <section class="se">
+          <h4>Project management</h4>
           <ul>
-            <li>Created a local database and reporting scripts (<em>MS SQL server</em>/<em>Python</em>)</li>
-            <li>Mapped field work by importing spreadsheet reports to Google Earth</li>
+            <li><em>Slack</em></li>
+            <li><em>Lucidchart</em></li>
+            <li><em>Atlassian Jira/Confluence</em></li>
+            <li><em>GitHub</em></li>
+            <li><em>Google Workspace</em></li>
           </ul>
-          Result - Reduced planning time and improved integrity of mapping data in the field.
-        </p>
+        </section>
       </section>
-    </section>
-  </div>
-</body>
+      <section class="work-experience">
+        <h1>Work Experience</h1>
+        <section class="we">
+          <h3>Software Developer</h3>
+          <h4>Semaphore Solutions  2021 -> current</h4>
+          <p>
+            Developed software integrations for genomics laboratory Helix, via cross-functional team, implementing Semaphore's novel Laboratory Information Management System (LIMS) product (named labbit).
+            <ul>
+              <li>Designed workflows with a focus on requeue scenarios</li>
+              <li>Developed a Python software development kit to integrate labbit APIs (<em>marshmallow</em>, <em>requests</em>, <em>pyjwt</em>, <em>csv</em>)</li>
+              <li>Tested labbit performance (<em>Python</em>, <em>Bash</em>), API contracts (<em>OpenAPI</em>)</li>
+              <li>Troubleshoot bugs and triaged with product and operations team (<em>Datadog</em>)</li>
+            </ul>
+            Result - Successful first implementation of labbit, proof of principle for migrating regulated lab workflow management logic from one LIMS to another.
+          </p>
+        </section>
+        <section class="we">
+          <h3>Software Developer/Solutions Engineer</h3>
+          <h4>Semaphore Solutions  2018 -> 2021</h4>
+          <p>
+            Developed software integrations for several large US healthcare and genomics companies, implementing Illumina's Clarity LIMS.
+            <ul>
+              <li>Designed workflows to support a variety of clincial pathology laborotory techniques</li>
+              <li>Developed Python data processing scripts or standalone software integrations (<em>Python</em>/<em>Flask</em>)</li>
+              <li>Wrote test code to support behavior-driven or test-driven development (<em>unittest</em>, <em>pytest</em>)</li>
+            </ul>
+            Result - Increased software development velocity and enabled healthcare centres and biotech companies (e.g. Cleveland Clinic, and Illumina) to build and deploy production software within budget.
+          </p>
+        </section>
+        <section class="we">
+          <h3>Environmental Consultant/Data Manager</h3>
+          <h4>Infinite Forestry  2017 -> 2018</h4>
+          <p>
+            Supported project management of field work and data relating to forestry services.
+            <ul>
+              <li>Created a local database and reporting scripts (<em>MS SQL server</em>/<em>Python</em>)</li>
+              <li>Mapped field work by importing spreadsheet reports to Google Earth</li>
+            </ul>
+            Result - Reduced planning time and improved integrity of mapping data in the field.
+          </p>
+        </section>
+      </section>
+    </div>
+
+  </body>
+
+<!-- flip dark vs light mode -->
+<script>
+  const toggle = document.getElementById('toggleDark');
+  const body = document.body;
+  toggle.addEventListener('click', function() {
+    this.classList.toggle('bi-moon-fill');
+    this.classList.toggle('bi-brightness-high');
+  
+    body.classList.toggle('dark-mode');
+  }
+  )
+</script>
+
 </html>
