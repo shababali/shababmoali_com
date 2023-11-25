@@ -18,6 +18,9 @@
         background: #1a1a1a; /* lighter than black */
         color: #ddd; /* Light text color for dark mode */
       }
+      .dark-mode a {
+        color: #800080; /* Adjust the color value as per your preference */
+      }
       #toggleDark {
         font-size: 24px;
         cursor: pointer;
@@ -25,11 +28,36 @@
         top: 16px; /* Adjust this value to position the icon from the top */
         right: 16px; /* Adjust this value to position the icon from the right */
       }
+      #scrollDown {
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 16px; /* Adjust this value to position the icon from the top */
+        right: 16px; /* Adjust this value to position the icon from the right */
+      }
+      /* Default styles for anchor tags */
       a {
-        color: #545454;
+        color: #545454; /* Default color */
+        text-decoration: none; /* Remove default underline */
+        font-weight: bold; /* Make the text bold */
       }
       a:hover, a:focus {
-        text-decoration: inherit;
+        text-decoration: underline; /* Underline on hover */
+      }
+      a:visited {
+        text-decoration: none; /* Remove underline for visited links */
+      }
+
+      .container-landing {
+        height: 100vh; /* Full viewport height */
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .container-landing p {
+        max-width: 620px; /* Adjust as needed */
+        margin: 0 auto;
+        padding: 12px;
       }
 
       .container-content {
@@ -77,10 +105,24 @@
   </head>
 
   <body>
-
+    <i class="bi bi-brightness-high" id="toggleDark"></i>
+    <i class="bi bi-arrow-down-circle" id="scrollDown"></i>
     <div class="container-landing">
-      <i class="bi bi-brightness-high" id="toggleDark"></i>
+      <p>
+        Hi, I'm <strong>Shabab</strong>.<br><br><br><br>
+
+        I helped launch <a href=https://labbit.com/lims target="_blank">labbit</a> a platform for laboratory services, especially in clincial genomics.<br>
+        I engineered for product; I engineered for implementations; It was fantastic -- <br><br>
+        
+        Now, I've switched gears, working on computer architecture and <a href="https://www.youtube.com/@AndrejKarpathy" target="_blank">Andrej Karpathy lessons</a> to get up to speed in this new paradigm of data-driven programming.<br><br>
+        
+        I live in Victoria, BC (quaint and pretty).<br>
+        You can find me on <a href=https://twitter.com/shababmoali target="_blank">X (formerly Twitter)</a>.<br> 
+        We can also connect via <a href="https://www.linkedin.com/in/shabab-ali/" target="_blank">LinkedIn</a><br><br><br>
+        Scroll down for a brief review of my working abilities...
+      </p>
     </div>
+
 
     <div class="container-content">
       <section class="skills">
@@ -123,7 +165,7 @@
           <h4>Software Engineer</h4>
           <h5><a href="https://semaphoresolutions.com/" target="_blank">Semaphore Solutions</a>;<br>2021 - 2023</h5>
           <p>
-            Built <a href=https://labbit.com/lims target="_blank">labbit/Laboratory Information Management System (LIMS)</a>
+            Built <a href=https://labbit.com/lims target="_blank">labbit</a> -- a platform approach to Laboratory Information Management Systems (LIMSs)
             <ul>
               <li>Designed automated laboratory workflows (<em>Camunda</em>)</li>
               <li>Developed a software development kit (SDK) to integrate via labbit APIs (<em>Python</em>, <em>OAuth</em>)</li>
@@ -143,9 +185,9 @@
             <ul>
               <li>Developed library <a href="https://github.com/SemaphoreSolutions/s4-clarity-lib" target="_blank">s4-clarity</a> to aid Clarity LIMS software integrations (<em>Python</em>)</li>
               <li>Developed standalone software integrations (<em>Python</em>/<em>Flask</em>)</li>
-              <li>Quality assured and test engineered genomics codebases (<em>Python</em>)</li>
+              <li>Quality assured and test engineered genomics codebases (<em>Python, Java</em>)</li>
             </ul>
-            Result - Facilitated Illumina software integrations with utmost satisfaction.
+            Result - Facilitated Illumina software integrations for novel laboratory workflows.
           </p>
         </section>
       </section>
@@ -153,17 +195,27 @@
 
   </body>
 
-<!-- flip dark vs light mode -->
-<script>
-  const toggle = document.getElementById('toggleDark');
-  const body = document.body;
-  toggle.addEventListener('click', function() {
-    this.classList.toggle('bi-moon-fill');
-    this.classList.toggle('bi-brightness-high');
-  
-    body.classList.toggle('dark-mode');
-  }
-  )
-</script>
+  <!-- flip dark vs light mode -->
+  <script>
+    const toggle = document.getElementById('toggleDark');
+    const body = document.body;
+
+    toggle.addEventListener('click', function() {
+      this.classList.toggle('bi-moon-fill');
+      this.classList.toggle('bi-brightness-high');
+    
+      body.classList.toggle('dark-mode');
+    });
+  </script>
+
+  <!-- JavaScript to handle scroll to content -->
+  <script>
+    const scrollDown = document.getElementById('scrollDown');
+    const contentSection = document.querySelector('.container-content');
+
+    scrollDown.addEventListener('click', function() {
+      contentSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 
 </html>
