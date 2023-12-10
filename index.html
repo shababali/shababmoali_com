@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shabab Ali</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <style>
-
       /* flip dark vs light mode */
       body {
         font-family: monospace;
@@ -35,6 +35,31 @@
         bottom: 16px;
         right: 16px;
       }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 4px;
+        top: 16px;
+        left: 16px;
+        cursor: help;
+      }
+      .tooltiptext {
+        visibility: hidden;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+      
       /* Default styles for anchor tags */
       a {
         color: #545454; /* Default color */
@@ -71,7 +96,7 @@
       }
       .skills {
         /* modify the width of the 'skills' section using the flex-basis property */
-        flex-basis: 32%;
+        flex-basis: 20%;
         padding: 24px;
         border-right: 2px solid #000;
       }
@@ -89,7 +114,7 @@
         margin-bottom: 4px;
       }
       .work-experience {
-        flex-basis: 68%;
+        flex-basis: 80%;
         padding: 24px 32px;
       }
       .we {
@@ -101,43 +126,18 @@
       .work-experience h3 {
         margin-bottom: 10px;
       }
-
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 4px;
-      top: 16px;
-      left: 16px;
-      cursor: help;
-    }
-
-    .tooltiptext {
-      visibility: hidden;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
     </style>
   </head>
 
   <body>
-    <!-- Tooltip re: site specs -->
+    <!-- tooltip re: site specs -->
     <div class="tooltip">
       <i class="bi bi-info-circle"></i>
-      <span class="tooltiptext">Hosted via apache server on a mini gcp e2 instance. Sorry, SSL certificates coming soon.</span>
+      <span class="tooltiptext">Hosted via apache server on a mini gcp e2 instance.</span>
     </div>
+    <!-- toggleDark -->
     <i class="bi bi-brightness-high" id="toggleDark"></i>
+    <!-- scrollDown -->
     <i class="bi bi-arrow-down-circle" id="scrollDown"></i>
     <div class="container-landing">
       <p>
@@ -229,7 +229,7 @@
     </div>
   </body>
 
-  <!-- flip dark vs light mode -->
+  <!-- toggleDark: flip dark vs light mode -->
   <script>
     const toggle = document.getElementById('toggleDark');
     const body = document.body;
@@ -242,7 +242,7 @@
     });
   </script>
 
-  <!-- handle scroll to content -->
+  <!-- scrollDown: handle scroll to content -->
   <script>
     const scrollDown = document.getElementById('scrollDown');
     const contentSection = document.querySelector('.container-content');
